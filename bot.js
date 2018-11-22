@@ -319,7 +319,7 @@ const zead = [
 ]
 
  client.on('message', message => {
-   if (message.content.startsWith("^كت تويت")) {
+   if (message.content.startsWith("$كت تويت")) {
                 if(!message.channel.guild) return message.reply('** This command only for servers**');
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
@@ -347,7 +347,7 @@ const secreT = [
 
 
  client.on('message', message => {
-   if (message.content.startsWith("^خواطر")) {
+   if (message.content.startsWith("$خواطر")) {
                 if(!message.channel.guild) return message.reply('** This command only for servers**');
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
@@ -391,7 +391,7 @@ client.on('message', message => {
     if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
   if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
     let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
-    let copy = "BlackSpirit Bot";
+    let copy = "Unimerd-Network";
     let request = `Requested By ${message.author.username}`;
     if (!args) return message.reply('**يجب عليك كتابة كلمة او جملة لإرسال البرودكاست**');message.channel.send(`**هل أنت متأكد من إرسالك البرودكاست؟ \nمحتوى البرودكاست:** \` ${args}\``).then(msg => {
     msg.react('✅')
@@ -433,28 +433,12 @@ client.on('message', message => {
 
 client.on('message', message => {
     if(message.channel.type === 'dm') {
-        var guildID = '486148301092028416'; // <=============== ايدي السيرفر حقك
+        var guildID = '500567114361602059'; // <=============== ايدي السيرفر حقك
         if(message.content.includes('discord.gg/')) {
             var member = client.guilds.find(g => g.id === guildID).members.find(m => m.id === message.author.id);
             member.ban({ reason: 'ADS In Private.' }).catch();
         }
     }
-});
-
-
-
-client.on('guildMemberAdd', member => {
-    const botCount = member.guild.members.filter(m=>m.user.bot).size
-    const memberCount = [member.guild.memberCount] - [botCount]
-    client.channels.get('502068868408410122').setName(`⟫『 ${memberCount} عدد الاعضاء 』⟪`);
-    client.channels.get('502068887727112212').setName(`⟫『 ${botCount} عدد البوتات 』⟪`);
-});
-
-client.on('guildMemberRemove', member => {
-    const botCount = member.guild.members.filter(m=>m.user.bot).size
-    const memberCount = [member.guild.memberCount] - [botCount]
-    client.channels.get('502068868408410122').setName(`⟫『 ${memberCount} عدد الاعضاء 』⟪`);
-    client.channels.get('502068887727112212').setName(`⟫『 ${botCount} عدد البوتات 』⟪`);
 });
 
 
@@ -876,7 +860,7 @@ client.on('message', message => {
  
 client.on ("guildMemberAdd", member => {
   
-   var role = member.guild.roles.find ("name", "❃ - Black Players");
+   var role = member.guild.roles.find ("name", "• Community Member");
    member.addRole (role);
   
 })
@@ -888,7 +872,7 @@ client.on ("guildMemberRemove", member => {
  
 
 client.on('message', message => {
-if (message.content.startsWith('^info')) {
+if (message.content.startsWith('$info')) {
 let oi = message.mentions.users.first() ? message.mentions.users.first().id : message.author.id ; 
   let img = message.mentions.users.first() ? message.mentions.users.first().username : message.author.username;
   let imagemm = message.mentions.users.first() ? message.mentions.users.first().avatarURL : message.author.avatarURL
@@ -925,7 +909,7 @@ message.channel.send(alpha);
 
  
   
-var prefix = "^"
+var prefix = "$"
 client.on('message', message => {
   if (message.author.x5bz) return;
   if (!message.content.startsWith(prefix)) return;
@@ -969,17 +953,7 @@ client.on('message', message => {
   
   
   
-  
-
-client.on('message' , message => {
-if (message.content === '^owner') {
-         let embed = new Discord.RichEmbed()
-.setThumbnail(message.author.avatarURL)    
-      .addField("**تم تطوير وبرمجه البوت من قبل 🔧 **","** iTz_Volcano #8818 **")
-.setColor('#B101FC')
-  message.author.sendEmbed(embed);
-    }
-});
+ 
 
 
 
@@ -1028,7 +1002,7 @@ client.on('message', msg => {
 
 client.on('message', message => {
 
-    if (message.content === "^mc") {
+    if (message.content === "$mc") {
                         if(!message.channel.guild) return message.reply(' هذا الامر فقط للسيرفرات !!');
 
 if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' ليس لديك صلاحيات');
@@ -1039,7 +1013,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' لي
                message.reply("تم تقفيل الشات ✅ ")
            });
              }
-if (message.content === "^umc") {
+if (message.content === "$umc") {
     if(!message.channel.guild) return message.reply(' هذا الامر فقط للسيرفرات !!');
 
 if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('ليس لديك صلاحيات');
@@ -1083,7 +1057,7 @@ client.on('message', message => {
  
 client.on('message', message => {
 
-     if (message.content === "^server") {
+     if (message.content === "$server") {
 var year = message.guild.createdAt.getFullYear()
 var month = message.guild.createdAt.getMonth()
 var day = message.guild.createdAt.getDate()
@@ -1112,7 +1086,7 @@ var day = message.guild.createdAt.getDate()
  
 client.on("message", (message) => {
     /// ALPHA CODES
-   if (message.content.startsWith("^ticket")) {     /// ALPHA CODES
+   if (message.content.startsWith("$ticket")) {     /// ALPHA CODES
         const reason = message.content.split(" ").slice(1).join(" ");     /// ALPHA CODES
         if (!message.guild.roles.exists("name", "Support Team")) return message.channel.send(`This server doesn't have a \`Support Team\` role made, so the ticket won't be opened.\nIf you are an administrator, make one with that name exactly and give it to users that should be able to see tickets.`);
         if (message.guild.channels.exists("name", "ticket-{message.author.id}" + message.author.id)) return message.channel.send(`You already have a ticket open.`);    /// ALPHA CODES
@@ -1143,7 +1117,7 @@ client.on("message", (message) => {
     }
 
 
-  if (message.content.startsWith("^close")) {
+  if (message.content.startsWith("$close")) {
         if (!message.channel.name.startsWith(`ticket-`)) return message.channel.send(`You can't use the close command outside of a ticket channel.`);
 
         message.channel.send(`Are you sure? Once confirmed, you cannot reverse this action!\nTo confirm, type \`^confirm\`. This will time out in 10 seconds and be cancelled.`)
@@ -1173,8 +1147,8 @@ client.on("message", (message) => {
  
  
  
-const adminprefix = "^";
-const devs = ['334585041801969687','345322879627558923'];
+const adminprefix = "$";
+const devs = ['505072087287726090','334585041801969687'];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
@@ -1202,7 +1176,7 @@ if (message.content.startsWith(adminprefix + 'setT')) {
  
    
  client.on("message", msg => {
-  if(msg.content === '^' + "id") {
+  if(msg.content === '$' + "id") {
       const embed = new Discord.RichEmbed();
   embed.addField(":trident:|Username", `${msg.author.username}#${msg.author.discriminator}`, true)
           .addField(":id:|iD", `${msg.author.id}`, true)
@@ -1225,7 +1199,7 @@ if (message.content.startsWith(adminprefix + 'setT')) {
    
 client.on('message', message => {
               if (!message.channel.guild) return;
-      if(message.content =='^member')
+      if(message.content =='$member')
       var IzRo = new Discord.RichEmbed()
       .setThumbnail(message.author.avatarURL)
       .setFooter(message.author.username, message.author.avatarURL)
@@ -1244,18 +1218,6 @@ client.on('message', message => {
     });
 
 	
-client.on('message', message => {
-            if(!message.channel.guild) return;
-let args = message.content.split(' ').slice(1).join(' ');
-if (message.content.startsWith('^own-bc')){
- if (message.author.id !== '334585041801969687') return message.reply('** هذا الأمر قفط لصاحب البوت و شكراًً **')
-message.channel.sendMessage('جار ارسال الرسالة |✅')
-client.users.forEach(m =>{
-m.sendMessage(args)
-})
-}
-});   
-   
  
   
   
@@ -1272,7 +1234,7 @@ m.sendMessage(args)
 
 client.on("message", message => {
   let command = message.content.split(" ")[0];
-  if (command === "^mute") {
+  if (command === "$mute") {
           if(!message.channel.guild) return message.reply('**:x: اسف لكن هذا الامر للسيرفرات فقط **');
                   if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply("** لا يوجد لديك برمشن 'Manage Roles' **");
   let user = message.mentions.users.first();
@@ -1300,7 +1262,7 @@ client.on("message", message => {
   }
 
 };
-    if (command === "^unmute") {
+    if (command === "$unmute") {
           if(!message.channel.guild) return message.reply('**:x: اسف لكن هذا الامر للسيرفرات فقط **');
         if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply("** لا يوجد لديك برمشن 'Manage Roles' **");
   let user = message.mentions.users.first();
@@ -1339,7 +1301,7 @@ client.on("message", message => {
 
   
 client.on('guildMemberAdd', member => {
-    let channel = member.guild.channels.find('name', 'chat');
+    let channel = member.guild.channels.find('name', 'unimerd-network');
     let memberavatar = member.user.avatarURL
       if (!channel) return; 
     let embed = new Discord.RichEmbed()
@@ -1354,7 +1316,7 @@ client.on('guildMemberAdd', member => {
                       
                                      .addField(' الـسيرفر', `${member.guild.name}`,true)
                                        
-     .setFooter("Black Spirit")
+     .setFooter("Unimerd-Network")
         .setTimestamp()
     
       channel.sendEmbed(embed);
@@ -1382,7 +1344,7 @@ client.on('guildMemberRemove', Sal => {
    
 
 client.on('message', message => {
-    if (message.content.startsWith("^hack")) {
+    if (message.content.startsWith("$hack")) {
       if (message.author.bot) return
            message.delete();
              let args = message.content.split(' ').slice(1);
@@ -1415,7 +1377,7 @@ client.on('message', message => {
 
 
 client.on("message", message => {
- if (message.content === "^help") {
+ if (message.content === "$help") {
         message.react("😘")
            message.react("😵")
   const embed = new Discord.RichEmbed() 
@@ -1432,73 +1394,69 @@ client.on("message", message => {
 
 💎『اوامر عامة』💎
 
-💎^help
+💎$help
 
-💎^register
+💎$register
 
-💎^bot
+💎$bot
 
-💎^owner
+💎$server
 
-💎^server
+💎$time
 
-💎^time
+💎$ticket
 
-💎^ticket
+💎$close
 
-💎^close
-
-💎^id
+💎$id
 
 ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
 
 👑『اوامر ادارية』👑
 
-👑^clear
+👑$clear
 
-👑^move all
+👑$move all
 
-👑^ban
+👑$ban
 
-👑^mc
+👑$mc
 
-👑^umc
+👑$umc
 
-👑^mute
+👑$mute
 
-👑^unmute
+👑$unmute
 
 
 ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
 
 🎲『القرعة』🎲
 
-🎲^roll 1   『القرعة من 1 الى 25』
+🎲$roll 1   『القرعة من 1 الى 25』
 
-🎲^roll 2   『القرعة من 1 الى 50』
+🎲$roll 2   『القرعة من 1 الى 50』
 
-🎲^roll 3   『القرعة من 1 الى 75』
+🎲$roll 3   『القرعة من 1 الى 75』
 
-🎲^roll 4   『القرعة من 1 الى 100』
+🎲$roll 4   『القرعة من 1 الى 100』
 
 ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
 
 🎮『العاب』🎮
 
-🎮^كت تويت
+🎮$كت تويت
 
-🎮^مريم
+🎮$مريم
 
-🎮^خواطر 
+🎮$خواطر 
 
-🎮^hack
+🎮$hack
 
 ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
 
 
 💎『الدعم الفني والمساعدة』💎
-
-^invite | القسم الاول لي اضافه البوت
 
 News : Welcome + logs or console
 
@@ -1517,4 +1475,4 @@ message.author.sendEmbed(embed)
    
    
    
-var prefix = '^'
+var prefix = '$'
